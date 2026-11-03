@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西アフリカ神話図鑑 | ナイジェリア・ベナン・トーゴの神々と魔獣</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Noto Sans JP & Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAF8F5',       // メイン背景色（柔らかいオフホワイト）
+              card: '#FFFFFF',     // カード背景
+              beige: '#F4EFE6',    // ライトベージュ
+              beigeDark: '#E6DCCB',// ダークベージュ
+              gold: '#C89B3C',     // メインゴールド/黄
+              goldLight: '#FFFBF0',// 淡いゴールド背景
+              goldHover: '#B0842B',
+              text: '#2C2A29',     // ダークチャコール
+              subtext: '#65605B',  // サブテキスト
+              god: '#D97706',      // 神・守護神用アクセント（アンバー/金）
+              evil: '#991B1B'      // 邪神・魔獣用アクセント（深紅）
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+            serif: ['Cinzel', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #2C2A29;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .custom-shadow {
+      box-shadow: 0 10px 30px -5px rgba(200, 155, 60, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+    }
+    .modal-backdrop {
+      background-color: rgba(44, 42, 41, 0.6);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-gold selection:text-white">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-brand-bg/90 backdrop-blur-md border-b border-brand-beigeDark/60 px-4 lg:px-8 py-3 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-gold to-yellow-200 flex items-center justify-center text-white font-serif text-xl font-bold shadow-md">
+          Ω
+        </div>
+        <div>
+          <h1 class="font-serif font-bold text-lg md:text-xl tracking-wider text-brand-text">西アフリカ神話図鑑</h1>
+          <p class="text-xs text-brand-subtext tracking-tight">ナイジェリア・ベナン・トーゴの神々と魔獣</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex space-x-6 text-sm font-medium text-brand-subtext">
+        <a href="#regions" class="hover:text-brand-gold transition-colors">地域マップ</a>
+        <a href="#entities" class="hover:text-brand-gold transition-colors">神霊・魔獣一覧</a>
+        <a href="#about" class="hover:text-brand-gold transition-colors">神話の世界観</a>
+        <a href="#references" class="hover:text-brand-gold transition-colors">参考文献</a>
+      </nav>
+
+      <button onclick="scrollToExplore()" class="bg-brand-gold hover:bg-brand-goldHover text-white text-xs md:text-sm font-medium px-4 py-2 rounded-full shadow-sm transition-all duration-300">
+        図鑑を探索する
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-b from-brand-goldLight via-brand-bg to-brand-bg py-16 md:py-24 px-4 overflow-hidden border-b border-brand-beige">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <span class="inline-block px-3 py-1 bg-brand-beige text-brand-gold font-serif text-xs md:text-sm font-bold tracking-widest rounded-full mb-4 border border-brand-beigeDark/40">
+        YORUBA • VODUN • EWE MYTHOLOGY
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-brand-text leading-tight mb-6 font-serif">
+        聖なる神々と、暗闇に潜む災厄<br/>
+        <span class="text-brand-gold">西アフリカ伝承 30選</span>
+      </h2>
+      <p class="text-brand-subtext text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-8">
+        ヨルバ神話の聖地・ナイジェリア南西部、ヴォドゥン発祥の地・ベナン、そして自然精霊と密着したトーゴ。
+        西アフリカの3地域に語り継がれる代表的な守護神（オリシャ／ヴォドゥン）と、人類を脅かす魔獣・災厄（アジョグン／精霊）を網羅したインタラクティブ図鑑です。
+      </p>
+
+      <!-- Quick Counter -->
+      <div class="grid grid-cols-3 gap-3 md:gap-6 max-w-xl mx-auto">
+        <div class="bg-white/80 p-3 md:p-4 rounded-2xl border border-brand-beige shadow-sm">
+          <p class="text-xs text-brand-subtext">ナイジェリア南西部</p>
+          <p class="text-lg md:text-2xl font-bold text-brand-gold">10 柱/体</p>
+        </div>
+        <div class="bg-white/80 p-3 md:p-4 rounded-2xl border border-brand-beige shadow-sm">
+          <p class="text-xs text-brand-subtext">ベナン（ダホメ）</p>
+          <p class="text-lg md:text-2xl font-bold text-brand-gold">10 柱/体</p>
+        </div>
+        <div class="bg-white/80 p-3 md:p-4 rounded-2xl border border-brand-beige shadow-sm">
+          <p class="text-xs text-brand-subtext">トーゴ（エウェ）</p>
+          <p class="text-lg md:text-2xl font-bold text-brand-gold">10 柱/体</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGION SELECTOR & GOOGLE MAPS SECTION -->
+  <section id="regions" class="max-w-7xl mx-auto px-4 lg:px-8 py-16 w-full">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold font-serif text-brand-text mb-2">地域別マップ＆聖地探索</h2>
+      <p class="text-sm text-brand-subtext">地域を選択すると、Googleマップの位置情報と各地域の神・魔獣が表示されます。</p>
+    </div>
+
+    <!-- Region Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <button onclick="selectRegion('nigeria')" id="tab-nigeria" class="region-tab px-5 py-3 rounded-xl font-medium text-sm transition-all flex items-center space-x-2 bg-brand-gold text-white shadow-md">
+        <i class="fa-solid font-bold fa-location-dot"></i>
+        <span>ナイジェリア南西部（ヨルバ）</span>
+      </button>
+      <button onclick="selectRegion('benin')" id="tab-benin" class="region-tab px-5 py-3 rounded-xl font-medium text-sm transition-all flex items-center space-x-2 bg-white text-brand-subtext border border-brand-beigeDark hover:bg-brand-beige">
+        <i class="fa-solid font-bold fa-location-dot"></i>
+        <span>ベナン（ダホメ・ヴォドゥン）</span>
+      </button>
+      <button onclick="selectRegion('togo')" id="tab-togo" class="region-tab px-5 py-3 rounded-xl font-medium text-sm transition-all flex items-center space-x-2 bg-white text-brand-subtext border border-brand-beigeDark hover:bg-brand-beige">
+        <i class="fa-solid font-bold fa-location-dot"></i>
+        <span>トーゴ（エウェ伝承）</span>
+      </button>
+    </div>
+
+    <!-- Map & Region Info Split View -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <!-- Interactive Google Map Frame -->
+      <div class="lg:col-span-7 bg-white p-3 rounded-3xl border border-brand-beigeDark/60 custom-shadow flex flex-col justify-between min-h-[350px] md:min-h-[420px]">
+        <div class="relative w-full h-full rounded-2xl overflow-hidden min-h-[320px]">
+          <iframe id="google-map-iframe" 
+            class="w-full h-full absolute inset-0 border-0 rounded-2xl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1013725.6669926442!2d4.2!3d7.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1038234327774cfd%3A0xbef0b784e1b8bbf7!2sIfe%2C%20Osun%2C%20Nigeria!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="mt-3 px-2 flex justify-between items-center text-xs text-brand-subtext">
+          <span id="map-caption"><i class="fa-solid fa-map-pin text-brand-gold mr-1"></i>ヨルバ神話発祥の聖地：イレ＝イフェ / オヨ地域</span>
+          <span class="text-brand-gold font-medium">Google Maps 拡大表示対応</span>
+        </div>
+      </div>
+
+      <!-- Region Description & Quick Stats -->
+      <div id="region-info-box" class="lg:col-span-5 bg-brand-goldLight p-6 md:p-8 rounded-3xl border border-brand-beige flex flex-col justify-between">
+        <!-- Content will be updated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER ENTITIES SECTION -->
+  <section id="entities" class="max-w-7xl mx-auto px-4 lg:px-8 py-12 w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-brand-beigeDark/40 pb-6">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold font-serif text-brand-text">神々・邪神・魔獣図鑑一覧</h2>
+        <p class="text-sm text-brand-subtext mt-1">カードを選択すると全属性・伝承の解説を閲覧できます。</p>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="flex flex-wrap gap-2 items-center">
+        <!-- Filter Tabs -->
+        <button onclick="setFilter('all')" id="filter-all" class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg bg-brand-gold text-white">すべて (30)</button>
+        <button onclick="setFilter('god')" id="filter-god" class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg bg-white text-brand-subtext border border-brand-beigeDark hover:bg-brand-beige">神・守護神 (18)</button>
+        <button onclick="setFilter('evil')" id="filter-evil" class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg bg-white text-brand-subtext border border-brand-beigeDark hover:bg-brand-beige">邪神・魔獣 (12)</button>
+
+        <!-- Search Input -->
+        <div class="relative min-w-[180px]">
+          <input type="text" id="search-input" oninput="handleSearch()" placeholder="名前・キーワードで検索..." class="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-brand-beigeDark focus:outline-none focus:border-brand-gold bg-white">
+          <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-xs text-brand-subtext"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTITY GRID -->
+    <div id="entity-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Entity Cards Rendered by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ABOUT MYTHOLOGY BACKGROUND -->
+  <section id="about" class="bg-brand-beige/50 py-16 px-4 border-t border-b border-brand-beigeDark/40">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-brand-gold text-xs font-bold tracking-widest font-serif">WORLDVIEW</span>
+        <h2 class="text-2xl md:text-3xl font-bold font-serif text-brand-text mt-1">ヨルバ・西アフリカ神話の世界観</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-brand-subtext leading-relaxed">
+        <div class="bg-white p-6 rounded-2xl border border-brand-beige shadow-sm">
+          <h3 class="font-bold text-brand-text text-base mb-2 flex items-center">
+            <i class="fa-solid fa-sun text-brand-gold mr-2"></i>オルン（天界）とアイエ（地上）
+          </h3>
+          <p>
+            ヨルバ神話において世界は最高神オロドゥマレ（オロルン）の棲む天界「オルン」と、人間の暮らす地上「アイエ」に大別されます。オロドゥマレは高次元に位置するため、直接人々の前に立つことは稀であり、仲介者である精霊や神々（オリシャ）を通じて世界が維持されます。
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-brand-beige shadow-sm">
+          <h3 class="font-bold text-brand-text text-base mb-2 flex items-center">
+            <i class="fa-solid fa-scale-balanced text-brand-gold mr-2"></i>善悪を超えた調和とバランス
+          </h3>
+          <p>
+            ヨルバやヴォドゥンの世界観は「絶対的な善 vs 完全な悪」の二元論ではありません。神々（オリシャ）も人間のような怒りや愛を抱き、魔精霊（アジョグン）も試練や宇宙の均衡の一環とみなされます。イファ占いやエシュの伝令を通じ、いかに調和を保つかが重視されます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL FOR DETAILED VIEW -->
+  <div id="detail-modal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-shadow border border-brand-beigeDark flex flex-col justify-between transform transition-all">
+      <div class="p-6 md:p-8">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span id="modal-badge" class="px-3 py-0.5 rounded-full text-xs font-bold"></span>
+              <span id="modal-region-badge" class="px-2.5 py-0.5 rounded-full text-xs bg-brand-beige text-brand-subtext"></span>
+            </div>
+            <h3 id="modal-name" class="text-2xl md:text-3xl font-bold font-serif text-brand-text"></h3>
+            <p id="modal-subname" class="text-xs text-brand-subtext font-serif italic mt-0.5"></p>
+          </div>
+          <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-brand-beige hover:bg-brand-beigeDark text-brand-subtext flex items-center justify-center transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Detail Attributes -->
+        <div class="bg-brand-goldLight p-4 rounded-xl border border-brand-beige mb-6 text-xs md:text-sm space-y-2">
+          <div class="flex"><span class="font-bold w-24 text-brand-gold">主な聖地/領域:</span><span id="modal-domain" class="text-brand-text"></span></div>
+          <div class="flex"><span class="font-bold w-24 text-brand-gold">司る概念・象徴:</span><span id="modal-symbol" class="text-brand-text"></span></div>
+        </div>
+
+        <!-- Detail Content -->
+        <div class="space-y-4 text-sm text-brand-subtext leading-relaxed">
+          <h4 class="font-bold text-brand-text border-b border-brand-beige pb-1">【伝承と特徴】</h4>
+          <p id="modal-desc"></p>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-brand-beige/40 px-6 py-4 border-t border-brand-beige flex justify-end">
+        <button onclick="closeModal()" class="px-5 py-2 bg-brand-gold hover:bg-brand-goldHover text-white text-xs font-semibold rounded-full transition-all">
+          閉じる
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCES FOOTER (MLA 9TH EDITION FORMATTED) -->
+  <footer id="references" class="bg-brand-text text-brand-beige pt-12 pb-16 px-4 lg:px-8 border-t border-brand-gold">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center space-x-3 mb-6">
+        <i class="fa-solid fa-book-bookmark text-brand-gold text-xl"></i>
+        <h3 class="font-serif font-bold text-lg md:text-xl text-white tracking-wider">参考文献 (Works Cited - MLA 9th Edition)</h3>
+      </div>
+
+      <p class="text-xs text-brand-beigeDark mb-6 leading-relaxed">
+        本図鑑に収録されている神名、伝承、領域および解説は、以下の学術文献および解説メディア（MLA様式に基づき記載）を参照・構成しています。
+      </p>
+
+      <ul class="space-y-4 text-xs md:text-sm text-brand-beigeDark leading-relaxed pl-6 -indent-6 font-serif">
+        <li class="hover:text-white transition-colors">
+          Abimbola, Wande. <em class="text-brand-gold">Ifá: An Exposition of Ifá Literary Corpus</em>. Oxford University Press, 1976.
+        </li>
+        <li class="hover:text-white transition-colors">
+          AFRICANIST. 「ヨルバ神話超解説──401柱の神々、256の記号、そして大西洋を渡った信仰」 <em class="text-brand-gold">AFRICANIST（アフリカニスト）【アフリカリサーチメディア】</em>, <a href="https://note.com/africanist/n/naa1396c7879f" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-gold transition-colors break-all">https://note.com/africanist/n/naa1396c7879f</a>.
+        </li>
+        <li class="hover:text-white transition-colors">
+          Awolalu, J. Omosade. <em class="text-brand-gold">Yoruba Beliefs and Sacrificial Rites</em>. Longman, 1979.
+        </li>
+        <li class="hover:text-white transition-colors">
+          Blier, Suzanne Preston. <em class="text-brand-gold">African Vodun: Art, Psychology, and Power</em>. University of Chicago Press, 1995.
+        </li>
+      </ul>
+
+      <div class="mt-12 pt-6 border-t border-brand-subtext/40 text-center text-xs text-brand-subtext flex flex-col md:flex-row justify-between items-center gap-2">
+        <p>© 西アフリカ神話図鑑 All Rights Reserved.</p>
+        <p class="font-serif">Nigeria • Benin • Togo Mythological Database</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT DATA & INTERACTION LOGIC -->
+  <script>
+    // DATA DATABASE: 30 Entities Across 3 Regions
+    const mythologyData = [
+      // --- NIGERIA SOUTHWEST (10) ---
+      {
+        id: "obatala",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "god",
+        typeName: "神・守護神（オリシャ）",
+        name: "オバタラ",
+        nameEn: "Obatala",
+        domain: "イレ＝イフェ（Ile-Ife）",
+        symbol: "人類創造、白、平和、清廉、粘土",
+        desc: "最高神オロドゥマレの命を受け、粘土から人類の肉体を造形した創造神。純潔と清廉さを表す「白」をシンボルとし、障がいを持つ人々や弱者の特別な保護者とされます。ヨルバのあらゆる神話の中心地イレ＝イフェと深く結びついています。"
+      },
+      {
+        id: "sango",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "god",
+        typeName: "神・守護神（オリシャ）",
+        name: "シャンゴ",
+        nameEn: "Sango / Chango",
+        domain: "オヨ（Oyo）",
+        symbol: "雷、嵐、両刃の斧、正義、王権",
+        desc: "かつての実在のオヨ王国第4代国王が神格化したとされる雷と嵐の神。強力な戦士であり、両刃の斧（オシェ・シャンゴ）を携え、不義をはたらく者や嘘つきに対して雷を落として制裁を下します。"
+      },
+      {
+        id: "ogun",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "god",
+        typeName: "神・守護神（オリシャ）",
+        name: "オグン",
+        nameEn: "Ogun",
+        domain: "イレ＝イフェ / オレ（Obe）",
+        symbol: "鉄、鍛冶、戦争、道具、開拓",
+        desc: "鉄器と鍛冶技術、戦争を司る荒々しく強力な神。神々が天から地上へ降り立つ際に鉄の斧で道を切り開いたとされ、文明発展の功労者。現代ではドライバーやエンジニアの守護神でもあります。"
+      },
+      {
+        id: "oshun",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "god",
+        typeName: "神・守護神（オリシャ）",
+        name: "オシュン",
+        nameEn: "Oshun",
+        domain: "オショボ（Oshogbo・オシュン＝オショボの聖林）",
+        symbol: "淡水、美、愛、豊穣、外交の知恵",
+        desc: "オショボの川を司る淡水と愛、豊穣の美しき女神。黄金色の装飾品を身にまといます。かつて世界が大干ばつに見舞われた際、孔雀に変身して天へ飛び立ち世界を救った伝説を持ちます。"
+      },
+      {
+        id: "orunmila",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "god",
+        typeName: "神・守護神（オリシャ）",
+        name: "オルンミラ",
+        nameEn: "Orunmila",
+        domain: "イレ＝イフェ（Oko Itase）",
+        symbol: "運命、イファ占い、知恵、予言",
+        desc: "万物の運命と知識を記憶する知恵の神。イファ（Ifá）と呼ばれる厳密なオラクル占いの体系を通じて人々に助言を与え、暗黒の精霊アジョグンによる災厄から免れる方法を教授します。"
+      },
+      {
+        id: "oya",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "god",
+        typeName: "神・守護神（オリシャ）",
+        name: "オヤ",
+        nameEn: "Oya",
+        domain: "ニジェール川流域",
+        symbol: "竜巻、風、変容、死者の国の門番",
+        desc: "シャンゴの妻であり、凄まじい風や竜巻を巻き起こす戦う女神。死者の領域（冥界）の門番でもあり、人生の急激な変化や変革を司ります。"
+      },
+      {
+        id: "iku",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "evil",
+        typeName: "邪神・魔獣（アジョグン）",
+        name: "イク",
+        nameEn: "Iku",
+        domain: "冥界・死の淵",
+        symbol: "死、黒い衣、終焉",
+        desc: "人間に災厄をもたらす8大精霊「アジョグン」の筆頭にして、「死」そのものの具象化。黒い服を着て鉄の槌を持ち、寿命を迎えた者や予言を無視した者の命を容赦なく打ち砕きます。"
+      },
+      {
+        id: "arun",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "evil",
+        typeName: "邪神・魔獣（アジョグン）",
+        name: "アルン",
+        nameEn: "Arun",
+        domain: "病床・疫病発生地",
+        symbol: "病気、衰弱、感染症",
+        desc: "「病」を司る邪悪な精霊アジョグンの一体。人々の肉体に侵入して病魔を蔓延させ、苦痛と衰弱をもたらして命を脅かします。"
+      },
+      {
+        id: "egbere",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "evil",
+        typeName: "邪神・魔獣（アジョグン）",
+        name: "エグベレ",
+        nameEn: "Egbere",
+        domain: "ナイジェリア深いジャングル・湿地",
+        symbol: "涙、魔法のマット、小鬼、執着",
+        desc: "森の奥深くに生息する涙を流し続ける小鬼の妖魔。莫大な富をもたらす「魔法のマット」を所持しており、これを奪うと富豪になれると言われますが、奪主をどこまでも執拗に追い詰めます。"
+      },
+      {
+        id: "aroni",
+        region: "nigeria",
+        regionName: "ナイジェリア南西部",
+        type: "evil",
+        typeName: "邪神・魔獣（アジョグン）",
+        name: "アロニ",
+        nameEn: "Aroni",
+        domain: "禁忌の森",
+        symbol: "一本足、角、薬草知識、狂気",
+        desc: "一本足、一本腕で頭に角を持つ森の奇異な精霊。出会った人間を森の中で迷わせ精神を狂わせますが、果敢に立ち向かい認められた者には薬草や医術の秘伝を授ける気まぐれさも持ちます。"
+      },
+
+      // --- BENIN (10) ---
+      {
+        id: "mawu-lisa",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "god",
+        typeName: "神・守護神（ヴォドゥン）",
+        name: "マヴ・リサ",
+        nameEn: "Mawu-Lisa",
+        domain: "アボメイ（Abomey）",
+        symbol: "月（マヴ/陰）と太陽（リサ/陽）、宇宙の調和",
+        desc: "フォン人の最高神。月と夜と知恵を司る女性神「マヴ」と、太陽と昼と力を司る男性神「リサ」が背中合わせに一体となった双子神で、宇宙の対極とバランスを表します。"
+      },
+      {
+        id: "legba",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "god",
+        typeName: "神・守護神（ヴォドゥン）",
+        name: "レグバ",
+        nameEn: "Papa Legba / Legba",
+        domain: "ベナン全域（交差点・入口）",
+        symbol: "交差点、通信、運命の扉、トリックスター",
+        desc: "ヨルバのエシュに対応する伝令神。神々の世界と人間界を繋ぐ境界の守護者であり、あらゆるヴォドゥン儀式において最初に祈りを捧げられる非常に重要な存在です。"
+      },
+      {
+        id: "sakpata",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "god",
+        typeName: "神・守護神（ヴォドゥン）",
+        name: "サクパタ",
+        nameEn: "Sakpata",
+        domain: "大地・地表",
+        symbol: "大地、天然痘、皮膚病、治癒",
+        desc: "大地の表面と感染症（歴史的には天然痘）を司る強大なヴォドゥン。人々から最も恐れられる神の一柱ですが、正しく祀れば病を鎮めて健康を与える守護神となります。"
+      },
+      {
+        id: "hevioso",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "god",
+        typeName: "神・守護神（ヴォドゥn）",
+        name: "ヘヴィオソ",
+        nameEn: "Hevioso / Xevioso",
+        domain: "天空",
+        symbol: "雷鳴、雨、正義、作物成長",
+        desc: "天空に座し雷と裁きを司る神（ヨルバのシャンゴに対応）。農作物を育む慈雨をもたらす一方で、罪を犯した者に稲妻の斧を落として峻厳な正義を貫きます。"
+      },
+      {
+        id: "agwe",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "god",
+        typeName: "神・守護神（ヴォドゥン）",
+        name: "アグヴェ",
+        nameEn: "Agwé",
+        domain: "ウィダ（Ouidah）等の沿岸・海洋",
+        symbol: "海、海洋生物、船乗り、漁の恵み",
+        desc: "大西洋の水とそこに生息するすべての生物を支配する海の主神。海上で働く漁師や航海者の安全を守り、大漁を約束する優雅な神です。"
+      },
+      {
+        id: "gu",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "god",
+        typeName: "神・守護神（ヴォドゥン）",
+        name: "グ",
+        nameEn: "Gu",
+        domain: "ダホメ王国・兵器庫",
+        symbol: "鉄器、刀剣、軍事、技術",
+        desc: "ヨルバのオグンに相当する鉄と戦争の神。ダホメ王国の軍隊を守護し、武器や農具の製造を助けるテクノロジーと力強さの象徴です。"
+      },
+      {
+        id: "aziza",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "evil",
+        typeName: "邪神・魔獣（精霊）",
+        name: "アゼ（アジザの暗黒相）",
+        nameEn: "Aziza (Dark aspect)",
+        domain: "暗い密林",
+        symbol: "一ツ目、失踪、森林の怪奇",
+        desc: "森の奥深くに住まう小人の精霊。人間に魔法や薬草を教える善性を持つ一方で、不意に出遭った者を森の中に連れ去り行方不明にさせる怪異を引き起こします。"
+      },
+      {
+        id: "azizahnou",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "evil",
+        typeName: "邪神・魔獣（精霊）",
+        name: "アジザノ",
+        nameEn: "Azizahnou",
+        domain: "夜の森・荒野",
+        symbol: "幻惑、狂気、夜間襲撃",
+        desc: "夜間の森や荒野を彷徨う闇の魔獣。旅人の前に幻覚を見せて道を誤らせ、発狂させて命を奪う恐ろしい怪異です。"
+      },
+      {
+        id: "ofu",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "evil",
+        typeName: "邪神・魔獣（アジョグン）",
+        name: "オフ",
+        nameEn: "Ofu",
+        domain: "荒廃地・困窮地域",
+        symbol: "破滅、財産損失、無駄",
+        desc: "人間に「滅びと損失」をもたらす暗黒の精霊。家畜の突然死や収穫物の全滅、家財の紛失を引き起こして家庭を困窮に陥れます。"
+      },
+      {
+        id: "aje-benin",
+        region: "benin",
+        regionName: "ベナン（ダホメ）",
+        type: "evil",
+        typeName: "邪神・魔獣（夜の魔術）",
+        name: "アジェ（夜の幻獣）",
+        nameEn: "Ajẹ́",
+        domain: "集落の闇・夜空",
+        symbol: "フクロウ、吸血、魂の捕食",
+        desc: "夜間、フクロウなどの鳥の姿に変身して飛来し、人々の生命力や血、魂を密かに吸い尽くす恐れられる「夜の母たち」の暗黒面。"
+      },
+
+      // --- TOGO (10) ---
+      {
+        id: "sogbo",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "god",
+        typeName: "神・守護神（精霊）",
+        name: "ソグボ",
+        nameEn: "Sogbo",
+        domain: "トーゴ天空",
+        symbol: "雷鳴、偉容、天の絶対力",
+        desc: "トーゴのエウェ語族の伝承における最高位の雷神・天神。広大な大気を支配し、圧倒的な威厳をもって下界の均衡を保ちます。"
+      },
+      {
+        id: "ayida-weddo",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "god",
+        typeName: "神・守護神（精霊）",
+        name: "アイド・ウェド",
+        nameEn: "Ayida-Weddo",
+        domain: "大気・水脈",
+        symbol: "虹、大蛇、宇宙の柱、豊穣",
+        desc: "天空と地表を結ぶ「虹」を象徴する聖なる大蛇神。宇宙の重量を支える柱であり、湧水や豊かな実りをもたらす財宝の神でもあります。"
+      },
+      {
+        id: "kporedodzi",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "god",
+        typeName: "神・守護神（精霊）",
+        name: "クポレ",
+        nameEn: "Kporedodzi",
+        domain: "トーゴ農地・大地",
+        symbol: "土壌、農業、大地肥沃",
+        desc: "大地とその肥沃さを司る農業の守護神。厳しい気候のなかで人々の生活基盤である作物の豊作と土地の安定を約束します。"
+      },
+      {
+        id: "afe-vodun",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "god",
+        typeName: "神・守護神（精霊）",
+        name: "アフェ＝ヴォドゥン",
+        nameEn: "Afe-Vodun",
+        domain: "各家屋・一族の聖域",
+        symbol: "祖先、家内安全、一族の絆",
+        desc: "各家庭や一族に密着して一族の祖先霊を守り育む家内守護神。家族の健康や子孫繁栄を日常的に見守ります。"
+      },
+      {
+        id: "afa",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "god",
+        typeName: "神・守護神（精霊）",
+        name: "アファ",
+        nameEn: "Afa",
+        domain: "予言の聖域",
+        symbol: "オラクル、知恵、運命解読",
+        desc: "ヨルバのイファ占いに対応するエウェ伝承の知恵と予言の神。人々に来たるべき危険を警告し、それを回避する手段を提示します。"
+      },
+      {
+        id: "avlekete",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "god",
+        typeName: "神・守護神（精霊）",
+        name: "アヴレク",
+        nameEn: "Avlekete",
+        domain: "トーゴ沿岸部・海辺",
+        symbol: "波、海洋交易、港の護り",
+        desc: "海岸沿いの激しい波と交易を守護する水辺の女神。危険な海難事故や高潮から地元の漁師や商人を防衛します。"
+      },
+      {
+        id: "adze",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "evil",
+        typeName: "邪神・魔獣（吸血魔）",
+        name: "アドゼ",
+        nameEn: "Adze",
+        domain: "トーゴ全域の集落",
+        symbol: "ホタル、吸血、感染症、人間変形",
+        desc: "西アフリカで極めて有名な吸血の魔獣。普段は光るホタルの姿で家屋の隙間から侵入し、寝ている人間から血を吸い病を媒介します。捕らえると人型に大きく変貌して暴れ出します。"
+      },
+      {
+        id: "yeve-storm",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "evil",
+        typeName: "邪神・魔獣（荒ぶる精霊）",
+        name: "イェヴェ（暴走相）",
+        nameEn: "Yeve (Raging aspect)",
+        domain: "沿岸暴風地帯",
+        symbol: "暴風雨、洪水、タブーの罰",
+        desc: "嵐の激しい破壊力を体現した荒ぶる精霊。人間が自然への敬意を怠ったり禁忌（タブー）を冒した際、猛烈な高潮と暴風雨で村々を呑み込みます。"
+      },
+      {
+        id: "gbo",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "evil",
+        typeName: "邪神・魔獣（悪精霊）",
+        name: "グボ",
+        nameEn: "Gbo",
+        domain: "暗い路地・荒野",
+        symbol: "陰惨、不慮の事故、怪我",
+        desc: "集落の外縁や暗闇に生息する陰湿な悪霊。人間に足踏み外しや突発的な事故、怪我を発生させて苦しめます。"
+      },
+      {
+        id: "dozo-beast",
+        region: "togo",
+        regionName: "トーゴ（エウェ）",
+        type: "evil",
+        typeName: "邪神・魔獣（変形妖怪）",
+        name: "ドゾの変形獣",
+        nameEn: "Dozo Beast",
+        domain: "夜の密林",
+        symbol: "獣人合体、禁忌の森、捕食",
+        desc: "猟師の呪術伝承に現れる、獣と人間が歪に融合した姿を持つ怪獣。禁忌を侵して夜の森深くに足を踏み入れた愚かな人間を容赦なく食い殺します。"
+      }
+    ];
+
+    // REGION METADATA
+    const regionMeta = {
+      nigeria: {
+        title: "ナイジェリア南西部",
+        subtitle: "ヨルバ神話の発祥とオリシャ信仰の核心",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1013725.6669926442!2d4.2!3d7.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1038234327774cfd%3A0xbef0b784e1b8bbf7!2sIfe%2C%20Osun%2C%20Nigeria!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp",
+        mapCaption: "聖地イレ＝イフェ（Ile-Ife）および古代オヨ王国周辺",
+        description: "ヨルバ神話の根源地。最高神オロドゥマレのもと、人間と自然を導く「オリシャ（Orisha）」と呼ばれる神々と、暗闇から現れる災厄「アジョグン（Ajogun）」のせめぎ合いが語り継がれます。"
+      },
+      benin: {
+        title: "ベナン共和国（ダホメ）",
+        subtitle: "ダホメ王国とヴォドゥン（Vodun）の真髄",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1013915.2289417031!2d1.9!3d6.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023a1059f333333%3A0x6a0c0a0000000000!2sAbomey%2C%20Benin!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp",
+        mapCaption: "古代ダホメ王国の都アボメイ（Abomey）およびウィダ沿岸",
+        description: "フォン語族を中心に独自に開花した「ヴォドゥン信仰」の聖地。二位一体の最高神マヴ・リサや、交差点の神レグバを筆頭に、厳格かつ美しい精霊の体系が築かれています。"
+      },
+      togo: {
+        title: "トーゴ共和国",
+        subtitle: "エウェ諸族の自然精霊と恐ろしい妖怪伝承",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1014389.102384742!2d1.0!3d6.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e1c111111111%3A0x2222222222222222!2sLome%2C%20Togo!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp",
+        mapCaption: "首都ロメおよび沿岸・内陸の森林地帯",
+        description: "エウェ語族の伝承に彩られた地域。大蛇神アイド・ウェドや雷神ソグボなどの偉大な神々と共に、ホタルに変身して血を吸う「アドゼ」のような恐ろしい魔獣伝承が色濃く残ります。"
+      }
+    };
+
+    // CURRENT STATE
+    let currentRegion = 'nigeria';
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    // INITIALIZATION
+    window.onload = function() {
+      selectRegion('nigeria');
+      renderGrid();
+    };
+
+    // REGION SELECTOR FUNCTION
+    function selectRegion(regionKey) {
+      currentRegion = regionKey;
+      const data = regionMeta[regionKey];
+
+      // Update Map iframe
+      document.getElementById('google-map-iframe').src = data.mapUrl;
+      document.getElementById('map-caption').innerHTML = `<i class="fa-solid fa-map-pin text-brand-gold mr-1"></i>${data.mapCaption}`;
+
+      // Update Region Tab Styling
+      document.querySelectorAll('.region-tab').forEach(tab => {
+        tab.className = 'region-tab px-5 py-3 rounded-xl font-medium text-sm transition-all flex items-center space-x-2 bg-white text-brand-subtext border border-brand-beigeDark hover:bg-brand-beige';
+      });
+      const activeTab = document.getElementById(`tab-${regionKey}`);
+      if(activeTab) {
+        activeTab.className = 'region-tab px-5 py-3 rounded-xl font-medium text-sm transition-all flex items-center space-x-2 bg-brand-gold text-white shadow-md';
+      }
+
+      // Update Region Info Box
+      const godCount = mythologyData.filter(d => d.region === regionKey && d.type === 'god').length;
+      const evilCount = mythologyData.filter(d => d.region === regionKey && d.type === 'evil').length;
+
+      document.getElementById('region-info-box').innerHTML = `
+        <div>
+          <span class="text-xs font-bold text-brand-gold tracking-widest font-serif">REGION OVERVIEW</span>
+          <h3 class="text-2xl font-bold font-serif text-brand-text mt-1 mb-2">${data.title}</h3>
+          <p class="text-xs text-brand-gold font-medium mb-4">${data.subtitle}</p>
+          <p class="text-sm text-brand-subtext leading-relaxed">${data.description}</p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-beigeDark/40 flex items-center justify-between">
+          <div class="flex space-x-4 text-xs font-semibold">
+            <span class="text-brand-god"><i class="fa-solid fa-shield-halved mr-1"></i>守護神: ${godCount}</span>
+            <span class="text-brand-evil"><i class="fa-solid fa-skull mr-1"></i>邪神/魔獣: ${evilCount}</span>
+          </div>
+          <button onclick="scrollToGridAndFilter('${regionKey}')" class="text-xs font-bold text-brand-gold hover:underline">
+            この地域を絞り込み <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+      `;
+
+      renderGrid();
+    }
+
+    // FILTER LOGIC
+    function setFilter(filterType) {
+      currentFilter = filterType;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.className = 'filter-btn text-xs font-semibold px-4 py-2 rounded-lg bg-white text-brand-subtext border border-brand-beigeDark hover:bg-brand-beige';
+      });
+      const activeBtn = document.getElementById(`filter-${filterType}`);
+      if(activeBtn) {
+        activeBtn.className = 'filter-btn text-xs font-semibold px-4 py-2 rounded-lg bg-brand-gold text-white';
+      }
+      renderGrid();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+      renderGrid();
+    }
+
+    function scrollToGridAndFilter(regionKey) {
+      document.getElementById('entities').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToExplore() {
+      document.getElementById('regions').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // RENDER ENTITY CARDS GRID
+    function renderGrid() {
+      const container = document.getElementById('entity-grid');
+      container.innerHTML = '';
+
+      let filtered = mythologyData.filter(item => {
+        // Region filter matches current selected active tab or all
+        const matchRegion = (currentRegion === 'all' || item.region === currentRegion);
+        // Type filter
+        const matchType = (currentFilter === 'all' || item.type === currentFilter);
+        // Search query
+        const matchSearch = searchQuery === '' || 
+          item.name.toLowerCase().includes(searchQuery) || 
+          item.nameEn.toLowerCase().includes(searchQuery) ||
+          item.symbol.toLowerCase().includes(searchQuery) ||
+          item.desc.toLowerCase().includes(searchQuery);
+
+        return matchRegion && matchType && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-brand-subtext">
+            <i class="fa-solid fa-ghost text-4xl mb-3 text-brand-beigeDark"></i>
+            <p class="text-base font-medium">条件に該当する神体・魔獣が見つかりませんでした。</p>
+            <p class="text-xs text-brand-subtext mt-1">検索ワードを変えるか、フィルターを初期化してください。</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const isGod = item.type === 'god';
+        const badgeClass = isGod ? 'bg-amber-100 text-brand-god border-amber-300' : 'bg-red-100 text-brand-evil border-red-300';
+        const iconClass = isGod ? 'fa-shield-halved' : 'fa-skull';
+
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl p-6 border border-brand-beige custom-shadow hover:border-brand-gold/60 transition-all duration-300 cursor-pointer flex flex-col justify-between group';
+        card.onclick = () => openModal(item.id);
+
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold border ${badgeClass} flex items-center gap-1.5">
+                <i class="fa-solid ${iconClass}"></i>
+                <span>${item.typeName}</span>
+              </span>
+              <span class="text-xs text-brand-subtext font-medium bg-brand-beige px-2 py-0.5 rounded-md">
+                ${item.regionName}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold font-serif text-brand-text group-hover:text-brand-gold transition-colors">
+              ${item.name}
+            </h3>
+            <p class="text-xs text-brand-subtext font-serif italic mb-3">${item.nameEn}</p>
+
+            <div class="text-xs text-brand-subtext mb-4 space-y-1">
+              <p><strong class="text-brand-text">領域:</strong> ${item.domain}</p>
+              <p><strong class="text-brand-text">象徴:</strong> ${item.symbol}</p>
+            </div>
+
+            <p class="text-xs text-brand-subtext line-clamp-3 leading-relaxed mb-4">
+              ${item.desc}
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-brand-beige flex items-center justify-between text-xs font-semibold text-brand-gold group-hover:text-brand-goldHover">
+            <span>詳細な伝承を読む</span>
+            <i class="fa-solid fa-chevron-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // MODAL HANDLERS
+    function openModal(id) {
+      const item = mythologyData.find(d => d.id === id);
+      if(!item) return;
+
+      const isGod = item.type === 'god';
+      const badge = document.getElementById('modal-badge');
+      badge.textContent = item.typeName;
+      badge.className = isGod ? 'px-3 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-brand-god border border-amber-300' : 'px-3 py-0.5 rounded-full text-xs font-bold bg-red-100 text-brand-evil border border-red-300';
+
+      document.getElementById('modal-region-badge').textContent = item.regionName;
+      document.getElementById('modal-name').textContent = item.name;
+      document.getElementById('modal-subname').textContent = item.nameEn;
+      document.getElementById('modal-domain').textContent = item.domain;
+      document.getElementById('modal-symbol').textContent = item.symbol;
+      document.getElementById('modal-desc').textContent = item.desc;
+
+      const modal = document.getElementById('detail-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('detail-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close Modal on Backdrop Click
+    document.getElementById('detail-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
